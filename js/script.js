@@ -19,8 +19,13 @@ function getInnerValueById(innerId){
 
 document.getElementById('calculate').addEventListener('click', function(){
 const amount = getAmount('player');
-const totalExpense = amount * 5;
-setValue('expense', totalExpense);
+if(isNaN(amount)){
+    alert('please provide valid number');
+} else{
+
+    const totalExpense = amount * 5;
+    setValue('expense', totalExpense);
+}
 
 })
 
@@ -29,5 +34,11 @@ document.getElementById('calculate-total').addEventListener('click', function(){
     const coachAmount = getAmount('coach');
     const totalExpenseAmont = getInnerValueById('expense');
     const total = managerAmount + coachAmount + totalExpenseAmont;
-    setValue('total', total);
+    if(isNaN(total)){
+        alert('please input valid number!');
+    }
+    else{
+     setValue('total', total);
+    }
+
 })

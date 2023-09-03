@@ -1,3 +1,5 @@
+
+
 function getAmount(inputId){
     const getField = document.getElementById(inputId);
     const getFieldValue = getField.value;
@@ -19,11 +21,14 @@ function getInnerValueById(innerId){
 
 document.getElementById('calculate').addEventListener('click', function(){
 const amount = getAmount('player');
+const getOrderList = document.getElementById('orderdList');
+const orderLength = getOrderList.childNodes.length;
+
 if(isNaN(amount)){
     alert('please provide valid number');
 } else{
 
-    const totalExpense = amount * 5;
+    const totalExpense = amount * (orderLength - 1);
     setValue('expense', totalExpense);
 }
 

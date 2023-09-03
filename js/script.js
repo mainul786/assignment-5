@@ -5,7 +5,14 @@ function getAmount(inputId){
     return getFieldString;
 }
 
+function setValue(setId, value){
+const getElement = document.getElementById(setId);
+getElement.innerText = value;
+}
+
 document.getElementById('calculate').addEventListener('click', function(){
 const amount = getAmount('player');
+const totalExpense = amount * 5;
+setValue('expense', totalExpense);
 
 })
